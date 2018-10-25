@@ -1,0 +1,38 @@
+{
+  "name": "immutable-memo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash.isequal": "^4.5.0",
+    "react": "^16.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "immutable": "^3.8.2",
+    "jest": "^23.6.0"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/__tests__/**/*.test.js"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  }
+}
