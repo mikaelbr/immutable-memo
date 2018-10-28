@@ -6,6 +6,12 @@ creating functions for memoization with immutable data structures (Immutable.js)
 Will not rerender if equal immutable data structures between renders. But will
 render if it has children.
 
+## Install
+
+```
+npm i -S immutable-memo
+```
+
 ## Example
 
 ```js
