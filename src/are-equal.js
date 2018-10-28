@@ -68,20 +68,26 @@ function factory(methods) {
 
   function areEqual(prevProps, nextProps) {
     if (nextProps === prevProps) {
-      if (debug) debug.call(this, 'areEqual => false (equal input)');
+      if (debug) debug.call(this, 'areEqual => true (equal input)');
+      return true;
+    }
+    if (prevProps.children !== nextProps.children) {
       return false;
     }
-    var filteredNextProps = filter(nextProps, isNotIgnorable),
-      filteredCurrentProps = filter(prevProps, isNotIgnorable);
+
+    const filteredNextProps = filter(nextProps, isNotIgnorable);
+    const filteredCurrentProps = filter(prevProps, isNotIgnorable);
 
     if (!_isEqualProps(filteredCurrentProps, filteredNextProps)) {
       if (debug)
-        debug.call(this, 'areEqual => true (props have changed)');
-      return true;
+        debug.call(this, 'areEqual => false (props have changed)');
+      return false;
     }
 
-    if (debug) debug.call(this, 'areEqual => false');
-    return false;
+    console.log('her 777');
+
+    if (debug) debug.call(this, 'areEqual => true');
+    return true;
   }
 
   /**
@@ -99,7 +105,6 @@ function factory(methods) {
    */
   function isEqualProps(value, other) {
     if (value === other) return true;
-
     var cursorsEqual = compare(
       value,
       other,
@@ -185,7 +190,6 @@ function factory(methods) {
 function compare(current, next, typeCheck, equalCheck) {
   var isCurrent = typeCheck(current);
   var isNext = typeCheck(next);
-
   if (isCurrent && isNext) {
     return equalCheck(current, next);
   }
@@ -207,7 +211,7 @@ function compare(current, next, typeCheck, equalCheck) {
  * @api public
  */
 function isEqualImmutable(a, b) {
-  return a === b;
+  return a.equals(b);
 }
 
 /**
