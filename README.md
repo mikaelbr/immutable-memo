@@ -3,6 +3,8 @@
 Uses a pre-defined function for equal comparison with `React.memo` for
 creating functions for memoization with immutable data structures (Immutable.js).
 
+This project is based on the `shouldComponentUpdate` function of [Omniscient.js](https://github.com/omniscientjs/omniscient)
+
 Will not rerender if equal immutable data structures between renders. But will
 render if it has children.
 
