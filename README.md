@@ -9,7 +9,7 @@ render if it has children.
 ## Install
 
 ```
-npm i -S immutable-memo
+npm i immutable-memo
 ```
 
 ## Example
